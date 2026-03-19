@@ -290,9 +290,9 @@ Write-Host $userTable
 Write-Host "------------------------------"
 
 #Exchange for my User's Entra ID token using OBO flow
-#az logout
-#az login --tenant $tenantId --scope "api://$blueprintAppId/access_as_user"
-<# $userToken = az account get-access-token --resource "api://$blueprintAppId" --query accessToken -o tsv
+az logout
+az login --tenant $tenantId --scope "api://$blueprintAppId/access_as_user" --use-device-code
+$userToken = az account get-access-token --resource "api://$blueprintAppId" --query accessToken -o tsv
 $userTokenBody = @{
     client_id              = $agentIdentityAppId
     scope                  = "https://graph.microsoft.com/.default"
@@ -312,11 +312,11 @@ $userToken = $userTokenResponse.access_token
 $userTokenPayload = Get-DecodedJwtToken -Token $userToken
 Write-Host "Now we have exchanged our Agent ID ($agentIdentityAppId) token for my Entra User's (admin@M365x41156588.onmicrosoft.com) token OBO"
 Write-Host "$($userTokenPayload)"
-Write-Host "------------------------------" #>
+Write-Host "------------------------------"
 
 # Use my User's OBO token to call the Microsoft Graph API
 # We'll ask it to list Users in the tenant, which requires the "User.Read.All" permission
-<# $userMsGraphTestResponse = Invoke-RestMethod -Method GET `
+$userMsGraphTestResponse = Invoke-RestMethod -Method GET `
     -Uri "https://graph.microsoft.com/v1.0/users?`$top=5" `
     -Headers @{
     "Authorization" = "Bearer $userToken"
@@ -337,4 +337,4 @@ $userTable = $userMsGraphTestResponse.value | Select-Object @{
 } | Format-Table -AutoSize | Out-String
 
 Write-Host $userTable
-Write-Host "------------------------------" #>
+Write-Host "------------------------------"
