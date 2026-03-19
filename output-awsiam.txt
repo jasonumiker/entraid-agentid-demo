@@ -12,74 +12,74 @@ AWS OIDC Token (Outbound Identity Federation) we're using to authenticate to the
     "ec2_instance_source_vpc": "vpc-0df3d1a7041be1adf",
     "ec2_role_delivery": "2.0",
     "aws_account": "281031839323",
-    "original_session_exp": "2026-03-18T16:24:23Z",
+    "original_session_exp": "2026-03-19T15:59:16Z",
     "source_region": "ap-southeast-2",
     "ec2_source_instance_arn": "arn:aws:ec2:ap-southeast-2:281031839323:instance/i-0faed1464b5c80bb3",
     "principal_id": "arn:aws:iam::281031839323:role/instanceRole",
     "ec2_instance_source_private_ipv4": "172.31.2.63"
   },
   "iss": "https://a1a27637-f90c-476d-807e-38f0eef30d60.tokens.sts.global.api.aws",
-  "exp": 1773828065,
-  "iat": 1773827765,
-  "jti": "b08f6b6d-bf0a-4aae-a67d-c7a4cb70894f"
+  "exp": 1773912961,
+  "iat": 1773912661,
+  "jti": "8b91631d-314b-41c0-b426-aec422662e16"
 }
 ------------------------------
-Blueprint's (ae6aff65-c6bf-4935-8dfb-f91d19ca0837) Access Token:
+Blueprint's (1ff6464b-416a-4c25-8f15-42c9c6964391) Access Token:
 {
   "aud": "fb60f99c-7a34-4190-8149-302f77469936",
   "iss": "https://login.microsoftonline.com/99238842-6a3b-4feb-8866-9ec5bc878bb4/v2.0",
-  "iat": 1773827466,
-  "nbf": 1773827466,
-  "exp": 1773831366,
-  "aio": "k2ZgYHDY5XfZTD3TNS8k9PWbraZcfjOrOe58StW5/vKweIVqpDEA",
-  "azp": "ae6aff65-c6bf-4935-8dfb-f91d19ca0837",
+  "iat": 1773912362,
+  "nbf": 1773912362,
+  "exp": 1773916262,
+  "aio": "k2ZgYGBi5qg5zLKhs5KjiCFW8OiRzK2y7svumOlMEFvPqG98tQkA",
+  "azp": "1ff6464b-416a-4c25-8f15-42c9c6964391",
   "azpacr": "2",
   "idtyp": "app",
-  "oid": "c5550108-060d-4cc3-9f06-69d229a8850a",
+  "oid": "743a531c-66bf-49cf-9a19-17ecfae187e7",
   "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtJz5YPs0epBBgUkwL3dGmTYAAABCAA.",
-  "sub": "/eid1/c/pub/t/QogjmTtq60-IZp7FvIeLtA/a/Zf9qrr_GNUmN-_kdGcoINw/cfef2994-48a3-4c27-bf6b-c1e2996d730c",
+  "sub": "/eid1/c/pub/t/QogjmTtq60-IZp7FvIeLtA/a/S0b2H2pBJUyPFULJxpZDkQ/b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
   "tid": "99238842-6a3b-4feb-8866-9ec5bc878bb4",
-  "uti": "1XU7ndGhpkasmcxTjuYQAA",
+  "uti": "wKj2YM9XC0eCzN7YpQgSAA",
   "ver": "2.0",
-  "xms_act_fct": "3 9",
+  "xms_act_fct": "9 3",
   "xms_ficinfo": "CAAQABgAIAAoAjAAOAU",
-  "xms_ftd": "BrFMf0zbtt6SxeyXwuMd3U1EP4fg0ifvdsHP7N_ujMYBYXVzdHJhbGlhc291dGhlYXN0LWRzbXM",
-  "xms_idrel": "32 7",
-  "xms_sub_fct": "9 3"
+  "xms_ftd": "ZoCaFx6mRrU_brvYxF14-Wp2udwY2lC0mPjsUwOOlmsBYXVzdHJhbGlhc291dGhlYXN0LWRzbXM",
+  "xms_idrel": "4 7",
+  "xms_sub_fct": "3 9"
 }
 ------------------------------
-Exchanged for the Agent ID's (cfef2994-48a3-4c27-bf6b-c1e2996d730c) Access Token:
+Exchanged for the Agent ID's (b7b1f2f6-060f-4152-b81c-a8b6b8a309db) Access Token:
 {
   "aud": "https://graph.microsoft.com",
   "iss": "https://sts.windows.net/99238842-6a3b-4feb-8866-9ec5bc878bb4/",
-  "iat": 1773827466,
-  "nbf": 1773827466,
-  "exp": 1773831366,
-  "aio": "ASQA2/8bAAAAGiUaVeQErPZo1fKFOD3CRUzfs5U0q+r2pVUXvVPmIyA=",
+  "iat": 1773912362,
+  "nbf": 1773912362,
+  "exp": 1773916262,
+  "aio": "ASQA2/8bAAAABwBFJv8dlroepOevn8WifhpVTlB+5adjUPYE0vXxgwM=",
   "app_displayname": "My Agent",
-  "appid": "cfef2994-48a3-4c27-bf6b-c1e2996d730c",
+  "appid": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
   "appidacr": "2",
   "idp": "https://sts.windows.net/99238842-6a3b-4feb-8866-9ec5bc878bb4/",
   "idtyp": "app",
-  "oid": "cfef2994-48a3-4c27-bf6b-c1e2996d730c",
+  "oid": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
   "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtAMAAAAAAAAAwAAAAAAAAAAAAABCAA.",
   "roles": [
     "User.Read.All"
   ],
-  "sub": "cfef2994-48a3-4c27-bf6b-c1e2996d730c",
+  "sub": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
   "tenant_region_scope": "OC",
   "tid": "99238842-6a3b-4feb-8866-9ec5bc878bb4",
-  "uti": "XIjfl6XSI0eVz-AvWK8lAA",
+  "uti": "pT_nY_572ESSxC0l7zUTAA",
   "ver": "1.0",
   "wids": [
     "0997a1d0-0d1d-4acb-b408-d5ca73121e90"
   ],
-  "xms_act_fct": "3 9 11",
-  "xms_ftd": "CVUgZp4JNygndU72V4f1QgaCM9ThswULBDZ0nsTMei4BYXVzdHJhbGlhYy1kc21z",
-  "xms_idrel": "7 18",
-  "xms_par_app_azp": "ae6aff65-c6bf-4935-8dfb-f91d19ca0837",
-  "xms_rd": "0.42LlYBJidBIS4WAXEvDzaklamnrCq2fed-4Tx2M2AUU5hQRuzWwLfdqQ5DV_mvXTnx1Rz4GiHEICzAwQcABKA0W5hQQusUb-__P7pGB5xPHQFQ7N96X4OLiEuAzNzY0tjMxNzMwA",
-  "xms_sub_fct": "11 9 3",
+  "xms_act_fct": "11 9 3",
+  "xms_ftd": "97kmzRnER1bhvoOf_SgXoPG3svuHK-cCCsxAYC3rDE0BYXVzdHJhbGlhZWFzdC1kc21z",
+  "xms_idrel": "7 28",
+  "xms_par_app_azp": "1ff6464b-416a-4c25-8f15-42c9c6964391",
+  "xms_rd": "0.42LlYBJidBIS4WAXEvD5l8k0Y_Faz1n7_nds-JicCxTlFBK4NbMt9GlDktf8adZPf3ZEPQeKcggJMDNAwAEoDRTlFhJQumuZ8yL0j_I874a5XC-9P0rxcXAJcRmamxtbGhoZmxkBAA",
+  "xms_sub_fct": "11 3 9",
   "xms_tcdt": 1767333340,
   "xms_tnt_fct": "3 16"
 }
@@ -100,73 +100,73 @@ New Agent ID token scoped to AzureADTokenExchange (needed for exchange) instead 
 {
   "aud": "fb60f99c-7a34-4190-8149-302f77469936",
   "iss": "https://login.microsoftonline.com/99238842-6a3b-4feb-8866-9ec5bc878bb4/v2.0",
-  "iat": 1773827466,
-  "nbf": 1773827466,
-  "exp": 1773831366,
-  "aio": "ASQA2/8bAAAATT+6IO24A6b8IyWyQdwyflYDpm+yX5buRe7cSVzIav4=",
-  "azp": "cfef2994-48a3-4c27-bf6b-c1e2996d730c",
+  "iat": 1773912363,
+  "nbf": 1773912363,
+  "exp": 1773916263,
+  "aio": "ASQA2/8bAAAAkRJRGMmCSPHhRqJ32DQ2peUZ2qi6mAvqEFvxJsbgfag=",
+  "azp": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
   "azpacr": "2",
   "idtyp": "app",
-  "oid": "cfef2994-48a3-4c27-bf6b-c1e2996d730c",
+  "oid": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
   "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtJz5YPs0epBBgUkwL3dGmTYAAABCAA.",
-  "sub": "cfef2994-48a3-4c27-bf6b-c1e2996d730c",
+  "sub": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
   "tid": "99238842-6a3b-4feb-8866-9ec5bc878bb4",
-  "uti": "HACsOxhSG0-RJlcChx81AA",
+  "uti": "e-l6JLy5Q06sKAprqh0OAA",
   "ver": "2.0",
   "xms_act_fct": "3 9 11",
   "xms_ficinfo": "CAAQABgAIAAoAzAAOAE",
-  "xms_ftd": "v-VynEsxlj9fmQt7pS-gUi-_wMI-I1UxwmA5Y5apKR4BYXVzdHJhbGlhZWFzdC1kc21z",
-  "xms_idrel": "7 16",
-  "xms_par_app_azp": "ae6aff65-c6bf-4935-8dfb-f91d19ca0837",
-  "xms_sub_fct": "3 9 11"
+  "xms_ftd": "z0jwosGIPZQroiCkoAZTj_OjznZla4ICkTlUx43RGokBYXVzdHJhbGlhZWFzdC1kc21z",
+  "xms_idrel": "7 20",
+  "xms_par_app_azp": "1ff6464b-416a-4c25-8f15-42c9c6964391",
+  "xms_sub_fct": "11 3 9"
 }
 ------------------------------
-Exchanging that new Agent ID (cfef2994-48a3-4c27-bf6b-c1e2996d730c) token for the Agent User's (MyAgentUser@M365x41156588.onmicrosoft.com) Access Token
+Exchanging that new Agent ID (b7b1f2f6-060f-4152-b81c-a8b6b8a309db) token for the Agent User's (MyAgentUser@M365x41156588.onmicrosoft.com) Access Token
 {
   "aud": "https://graph.microsoft.com",
   "iss": "https://sts.windows.net/99238842-6a3b-4feb-8866-9ec5bc878bb4/",
-  "iat": 1773827466,
-  "nbf": 1773827466,
-  "exp": 1773832788,
+  "iat": 1773912363,
+  "nbf": 1773912363,
+  "exp": 1773916322,
   "acct": 0,
   "acr": "0",
   "acrs": [
     "p1",
     "urn:user:registersecurityinfo"
   ],
-  "aio": "AbQAS/8bAAAA+b9P4+a0TgRCDWW08NdjSF4+J8q1cCCom8aCSKaz0EI3bRk5VZqmBeuDQPQcrmN19DfPnfoRvIAgmr+5BQUWuNnL5BOBptjpWcopJW7E/ebYDFzvSe47ilqd/ei4nG7+YpQqnEQl5MhOUD2M069R8C0k0DQzYiZMJzUtfkzPp1d0em6RCiqUX3xIwLDO4VweUNbzUlst6srZl5fj8b5RF6CEgo6v03b+7F5qg6/ybRo=",
+  "aio": "AbQAS/8bAAAABQ84DcKgoRXTQYewIxuyqY0pXp5/yZwZKUGq6pQPJct7MM4pc7k4rRceEz6Olc5BSntfze3Q8N5yQ3C9kiwy9lILn9mCRiMfYi3UUl19grIaT7Gfi61WVDUaeqFNAAwXVqnzor1AguhbV64R5xZPuWb3XOAj46bljFMBf7726iAeeCUPeSdVlWFUxdUx807fylTQTHPjK6bxRph4OeXqUt61a9Q3/D2HVPvx9yHJlnE=",
   "app_displayname": "My Agent",
-  "appid": "cfef2994-48a3-4c27-bf6b-c1e2996d730c",
+  "appid": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
   "appidacr": "2",
   "idtyp": "user",
-  "ipaddr": "16.176.171.217",
+  "ipaddr": "13.211.141.59",
   "name": "My Agent User",
-  "oid": "d9d235cf-8b52-4561-b863-e4ed34b2c7cd",
+  "oid": "937fd89c-e466-415a-b3ba-8fd6ae437658",
   "platf": "8",
-  "puid": "10032005A163CC9E",
-  "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtAMAAAAAAAAAwAAAAAAAAAAAAD5CAA.",
+  "puid": "10032005A65F837B",
+  "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtAMAAAAAAAAAwAAAAAAAAAAAAOlCAA.",
   "scp": "openid profile User.Read.All email",
-  "sid": "00308dca-d89c-a286-b696-2a3e52f2171e",
-  "sub": "pJgxzJ2gSnZQFJMiV6CKdEQEfiHX6j0aZIjKEJYofZA",
+  "sid": "0030b4da-1c1b-6b97-0fc9-3dc11013fbc6",
+  "sub": "IICP3AR9mEsUvJ_jo0gGJDIigRflN-6IDWa9sI9T6iQ",
   "tenant_region_scope": "OC",
   "tid": "99238842-6a3b-4feb-8866-9ec5bc878bb4",
   "unique_name": "MyAgentUser@M365x41156588.onmicrosoft.com",
   "upn": "MyAgentUser@M365x41156588.onmicrosoft.com",
-  "uti": "8OvQHRVkgEimJmY6Pw4OAA",
+  "uti": "TJz1I0eJgEeqBEoBnPcOAA",
   "ver": "1.0",
   "wids": [
     "b79fbf4d-3ef9-4689-8143-76b194e85509"
   ],
   "xms_act_fct": "3 9 11",
-  "xms_ftd": "pjbzaUUDSf4qobBKJSlOMiL4IgruIcuQuocVBqmyzUoBYXVzdHJhbGlhc291dGhlYXN0LWRzbXM",
-  "xms_idrel": "14 1",
-  "xms_par_app_azp": "ae6aff65-c6bf-4935-8dfb-f91d19ca0837",
+  "xms_ftd": "3WyX8pJMW-jxRKrSbldPr8JqgffacoEJTuYAxbkXPQgBYXVzdHJhbGlhYy1kc21z",
+  "xms_idrel": "1 24",
+  "xms_par_app_azp": "1ff6464b-416a-4c25-8f15-42c9c6964391",
   "xms_st": {
-    "sub": "Stgqcdo-2yK-yY5mwlrQqk-k9Bo1hY5mwKu-Bk6lf7M"
+    "sub": "edS7anl9s3BuDETITpvSaEVFyc8SoYVgsPWPOFqY-yc"
   },
   "xms_sub_fct": "3 13",
   "xms_tcdt": 1767333340,
-  "xms_tnt_fct": "3 10"
+  "xms_tnt_fct": "3 14"
 }
 ------------------------------
 Tenant Users (retrieved from MS Graph with our Agent User's token):

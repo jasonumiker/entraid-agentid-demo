@@ -1,7 +1,7 @@
-$blueprintAppId = "ae6aff65-c6bf-4935-8dfb-f91d19ca0837"
+$blueprintAppId = "1ff6464b-416a-4c25-8f15-42c9c6964391"
 $tenantId = "99238842-6a3b-4feb-8866-9ec5bc878bb4"
-$agentIdentityAppId = "cfef2994-48a3-4c27-bf6b-c1e2996d730c"
-$agentUserId = "d9d235cf-8b52-4561-b863-e4ed34b2c7cd"
+$agentIdentityAppId = "b7b1f2f6-060f-4152-b81c-a8b6b8a309db"
+$agentUserId = "937fd89c-e466-415a-b3ba-8fd6ae437658"
 $agentUserPrincipalName = "MyAgentUser@M365x41156588.onmicrosoft.com"
 $vmManagedIdentityId = "087b6eb6-06f3-4e42-9a0b-22a938b92e4d"
 $managedIdentityClientId = $env:MANAGED_IDENTITY_CLIENT_ID

@@ -1,3 +1,5 @@
+# Based on a script from https://github.com/razi-rais/3P-Agent-ID-Demo
+
 # Microsoft Entra Agent ID - PowerShell Functions
 # Complete workflow automation for creating and managing Agent Identities
 
@@ -1407,7 +1409,7 @@ function Add-BlueprintExposedScope {
     The App ID (client ID) of the blueprint application.
 
     .EXAMPLE
-    Add-BlueprintExposedScope -BlueprintAppId "ae6aff65-c6bf-4935-8dfb-f91d19ca0837"
+    Add-BlueprintExposedScope -BlueprintAppId "1ff6464b-416a-4c25-8f15-42c9c6964391"
     #>
     param(
         [Parameter(Mandatory = $true)]
