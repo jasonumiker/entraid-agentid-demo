@@ -12,26 +12,26 @@ AWS OIDC Token (Outbound Identity Federation) we're using to authenticate to the
     "ec2_instance_source_vpc": "vpc-0df3d1a7041be1adf",
     "ec2_role_delivery": "2.0",
     "aws_account": "281031839323",
-    "original_session_exp": "2026-03-19T15:59:16Z",
+    "original_session_exp": "2026-03-20T07:22:43Z",
     "source_region": "ap-southeast-2",
     "ec2_source_instance_arn": "arn:aws:ec2:ap-southeast-2:281031839323:instance/i-0faed1464b5c80bb3",
     "principal_id": "arn:aws:iam::281031839323:role/instanceRole",
     "ec2_instance_source_private_ipv4": "172.31.2.63"
   },
   "iss": "https://a1a27637-f90c-476d-807e-38f0eef30d60.tokens.sts.global.api.aws",
-  "exp": 1773912961,
-  "iat": 1773912661,
-  "jti": "8b91631d-314b-41c0-b426-aec422662e16"
+  "exp": 1773968005,
+  "iat": 1773967705,
+  "jti": "eab3a0c3-65de-41af-a312-158ee0d73144"
 }
 ------------------------------
 Blueprint's (1ff6464b-416a-4c25-8f15-42c9c6964391) Access Token:
 {
   "aud": "fb60f99c-7a34-4190-8149-302f77469936",
   "iss": "https://login.microsoftonline.com/99238842-6a3b-4feb-8866-9ec5bc878bb4/v2.0",
-  "iat": 1773912362,
-  "nbf": 1773912362,
-  "exp": 1773916262,
-  "aio": "k2ZgYGBi5qg5zLKhs5KjiCFW8OiRzK2y7svumOlMEFvPqG98tQkA",
+  "iat": 1773967405,
+  "nbf": 1773967405,
+  "exp": 1773971305,
+  "aio": "ASQA2/8bAAAAmeZOoGKCGZe1zqqDvdtedo2Z2nh6/UrDCJs7mswzNIY=",
   "azp": "1ff6464b-416a-4c25-8f15-42c9c6964391",
   "azpacr": "2",
   "idtyp": "app",
@@ -39,12 +39,12 @@ Blueprint's (1ff6464b-416a-4c25-8f15-42c9c6964391) Access Token:
   "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtJz5YPs0epBBgUkwL3dGmTYAAABCAA.",
   "sub": "/eid1/c/pub/t/QogjmTtq60-IZp7FvIeLtA/a/S0b2H2pBJUyPFULJxpZDkQ/b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
   "tid": "99238842-6a3b-4feb-8866-9ec5bc878bb4",
-  "uti": "wKj2YM9XC0eCzN7YpQgSAA",
+  "uti": "4oRMYm6M-0igxWsYT3IIAA",
   "ver": "2.0",
-  "xms_act_fct": "9 3",
+  "xms_act_fct": "3 9",
   "xms_ficinfo": "CAAQABgAIAAoAjAAOAU",
-  "xms_ftd": "ZoCaFx6mRrU_brvYxF14-Wp2udwY2lC0mPjsUwOOlmsBYXVzdHJhbGlhc291dGhlYXN0LWRzbXM",
-  "xms_idrel": "4 7",
+  "xms_ftd": "1SwUTScrFC_QjPFHFFlJPlUIsWtPeMPnruwQpAQV2JABYXVzdHJhbGlhZWFzdC1kc21z",
+  "xms_idrel": "7 32",
   "xms_sub_fct": "3 9"
 }
 ------------------------------
@@ -52,10 +52,10 @@ Exchanged for the Agent ID's (b7b1f2f6-060f-4152-b81c-a8b6b8a309db) Access Token
 {
   "aud": "https://graph.microsoft.com",
   "iss": "https://sts.windows.net/99238842-6a3b-4feb-8866-9ec5bc878bb4/",
-  "iat": 1773912362,
-  "nbf": 1773912362,
-  "exp": 1773916262,
-  "aio": "ASQA2/8bAAAABwBFJv8dlroepOevn8WifhpVTlB+5adjUPYE0vXxgwM=",
+  "iat": 1773967405,
+  "nbf": 1773967405,
+  "exp": 1773971305,
+  "aio": "k2ZgYLDmToo5w2MtfH9Kle9l8wuPp/zTecYpI/G1+aaOSUn1QRYA",
   "app_displayname": "My Agent",
   "appid": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
   "appidacr": "2",
@@ -69,19 +69,19 @@ Exchanged for the Agent ID's (b7b1f2f6-060f-4152-b81c-a8b6b8a309db) Access Token
   "sub": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
   "tenant_region_scope": "OC",
   "tid": "99238842-6a3b-4feb-8866-9ec5bc878bb4",
-  "uti": "pT_nY_572ESSxC0l7zUTAA",
+  "uti": "eLszq3T_s0OMR6BBMjwdAA",
   "ver": "1.0",
   "wids": [
     "0997a1d0-0d1d-4acb-b408-d5ca73121e90"
   ],
-  "xms_act_fct": "11 9 3",
-  "xms_ftd": "97kmzRnER1bhvoOf_SgXoPG3svuHK-cCCsxAYC3rDE0BYXVzdHJhbGlhZWFzdC1kc21z",
+  "xms_act_fct": "3 9 11",
+  "xms_ftd": "BqcC-Qwyu7D4VLg0f6PmpZUFlwJAOtYwkX92zCh7KgUBYXVzdHJhbGlhYy1kc21z",
   "xms_idrel": "7 28",
   "xms_par_app_azp": "1ff6464b-416a-4c25-8f15-42c9c6964391",
-  "xms_rd": "0.42LlYBJidBIS4WAXEvD5l8k0Y_Faz1n7_nds-JicCxTlFBK4NbMt9GlDktf8adZPf3ZEPQeKcggJMDNAwAEoDRTlFhJQumuZ8yL0j_I874a5XC-9P0rxcXAJcRmamxtbGhoZmxkBAA",
+  "xms_rd": "0.42LlYBJidBIS4WAXEuD6qGCxx7XXb5aLlPD3A3luQFFOIYFbM9tCnzYkec2fZv30Z0fUc6Aoh5AAMwMEHIDSQFFuIQGjNM-zDBU6ZZtEJ7CfzJsQJMXHwSXEZWhubmxpZm5iYAoA",
   "xms_sub_fct": "11 3 9",
   "xms_tcdt": 1767333340,
-  "xms_tnt_fct": "3 16"
+  "xms_tnt_fct": "3 14"
 }
 ------------------------------
 Tenant Users (retrieved from MS Graph with our Agent ID token):
@@ -100,10 +100,10 @@ New Agent ID token scoped to AzureADTokenExchange (needed for exchange) instead 
 {
   "aud": "fb60f99c-7a34-4190-8149-302f77469936",
   "iss": "https://login.microsoftonline.com/99238842-6a3b-4feb-8866-9ec5bc878bb4/v2.0",
-  "iat": 1773912363,
-  "nbf": 1773912363,
-  "exp": 1773916263,
-  "aio": "ASQA2/8bAAAAkRJRGMmCSPHhRqJ32DQ2peUZ2qi6mAvqEFvxJsbgfag=",
+  "iat": 1773967406,
+  "nbf": 1773967406,
+  "exp": 1773971306,
+  "aio": "ASQA2/8bAAAAOpF+NQCTQAGb3aOYSfthikiLoDGfy7vf/HMVoOLdOEM=",
   "azp": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
   "azpacr": "2",
   "idtyp": "app",
@@ -111,65 +111,156 @@ New Agent ID token scoped to AzureADTokenExchange (needed for exchange) instead 
   "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtJz5YPs0epBBgUkwL3dGmTYAAABCAA.",
   "sub": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
   "tid": "99238842-6a3b-4feb-8866-9ec5bc878bb4",
-  "uti": "e-l6JLy5Q06sKAprqh0OAA",
+  "uti": "bEXA3CYwLkWJadac630HAA",
   "ver": "2.0",
   "xms_act_fct": "3 9 11",
   "xms_ficinfo": "CAAQABgAIAAoAzAAOAE",
-  "xms_ftd": "z0jwosGIPZQroiCkoAZTj_OjznZla4ICkTlUx43RGokBYXVzdHJhbGlhZWFzdC1kc21z",
-  "xms_idrel": "7 20",
+  "xms_ftd": "WX3S7pEl8PpKO_sh8JD8xjiTB2L9uYOObjzEP5imoeYBYXVzdHJhbGlhZWFzdC1kc21z",
+  "xms_idrel": "18 7",
   "xms_par_app_azp": "1ff6464b-416a-4c25-8f15-42c9c6964391",
-  "xms_sub_fct": "11 3 9"
+  "xms_sub_fct": "11 9 3"
 }
 ------------------------------
 Exchanging that new Agent ID (b7b1f2f6-060f-4152-b81c-a8b6b8a309db) token for the Agent User's (MyAgentUser@M365x41156588.onmicrosoft.com) Access Token
 {
   "aud": "https://graph.microsoft.com",
   "iss": "https://sts.windows.net/99238842-6a3b-4feb-8866-9ec5bc878bb4/",
-  "iat": 1773912363,
-  "nbf": 1773912363,
-  "exp": 1773916322,
+  "iat": 1773967406,
+  "nbf": 1773967406,
+  "exp": 1773972170,
   "acct": 0,
   "acr": "0",
   "acrs": [
     "p1",
     "urn:user:registersecurityinfo"
   ],
-  "aio": "AbQAS/8bAAAABQ84DcKgoRXTQYewIxuyqY0pXp5/yZwZKUGq6pQPJct7MM4pc7k4rRceEz6Olc5BSntfze3Q8N5yQ3C9kiwy9lILn9mCRiMfYi3UUl19grIaT7Gfi61WVDUaeqFNAAwXVqnzor1AguhbV64R5xZPuWb3XOAj46bljFMBf7726iAeeCUPeSdVlWFUxdUx807fylTQTHPjK6bxRph4OeXqUt61a9Q3/D2HVPvx9yHJlnE=",
+  "aio": "AbQAS/8bAAAAWs7mwC/qM2VfRxzW0A2bDhLf+c7qKLAYjKSeANHibhFBZVMQi7pz+BnLb0u9TPGGITNEC+UJENTmELmtQ3AOoJsytWaf6dwARU9dRr9NXsRAtzwYX9G2yuKh+7/GKrKTrQqcr1R9+k3NliyLBsTxqZfRKvslCMNlQbFThw6SYkki0YxkCrwF6Lt2HNBFJ5Y8zXKUZBC3lldNPucguFi8coP+lmzDvaYuDK+GYUzqgCs=",
   "app_displayname": "My Agent",
   "appid": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
   "appidacr": "2",
   "idtyp": "user",
-  "ipaddr": "13.211.141.59",
+  "ipaddr": "54.252.157.153",
   "name": "My Agent User",
   "oid": "937fd89c-e466-415a-b3ba-8fd6ae437658",
   "platf": "8",
   "puid": "10032005A65F837B",
   "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtAMAAAAAAAAAwAAAAAAAAAAAAOlCAA.",
   "scp": "openid profile User.Read.All email",
-  "sid": "0030b4da-1c1b-6b97-0fc9-3dc11013fbc6",
+  "sid": "0030dbea-843c-d566-8b84-a1af03aaa5aa",
   "sub": "IICP3AR9mEsUvJ_jo0gGJDIigRflN-6IDWa9sI9T6iQ",
   "tenant_region_scope": "OC",
   "tid": "99238842-6a3b-4feb-8866-9ec5bc878bb4",
   "unique_name": "MyAgentUser@M365x41156588.onmicrosoft.com",
   "upn": "MyAgentUser@M365x41156588.onmicrosoft.com",
-  "uti": "TJz1I0eJgEeqBEoBnPcOAA",
+  "uti": "Red_9c3ML0yu3hjNdV4eAA",
   "ver": "1.0",
   "wids": [
     "b79fbf4d-3ef9-4689-8143-76b194e85509"
   ],
-  "xms_act_fct": "3 9 11",
-  "xms_ftd": "3WyX8pJMW-jxRKrSbldPr8JqgffacoEJTuYAxbkXPQgBYXVzdHJhbGlhYy1kc21z",
-  "xms_idrel": "1 24",
+  "xms_act_fct": "11 9 3",
+  "xms_ftd": "r8R-9nYTJMtkZlFtKDBJjqV8_WyH_JpAbXququa5mm8BYXVzdHJhbGlhZWFzdC1kc21z",
+  "xms_idrel": "1 4",
   "xms_par_app_azp": "1ff6464b-416a-4c25-8f15-42c9c6964391",
   "xms_st": {
     "sub": "edS7anl9s3BuDETITpvSaEVFyc8SoYVgsPWPOFqY-yc"
   },
-  "xms_sub_fct": "3 13",
+  "xms_sub_fct": "13 3",
   "xms_tcdt": 1767333340,
-  "xms_tnt_fct": "3 14"
+  "xms_tnt_fct": "3 8"
 }
 ------------------------------
 Tenant Users (retrieved from MS Graph with our Agent User's token):
+
+Display Name      User Principal Name                                                           ID
+------------      -------------------                                                           --
+Conf Room Adams   Adams@M365x41156588.OnMicrosoft.com                                           46aabaad-cc57-4ba2-b166-cb0cbb198fe5
+Adele Vance       AdeleV@M365x41156588.OnMicrosoft.com                                          2700fd00-3330-4e70-b4c9-3a443a4713f5
+MOD Administrator admin_D365DemoTSCE06654849.onmicrosoft.com#EXT#@M365x41156588.onmicrosoft.com 1d66f1a4-f269-40ac-b20e-451e8395397d
+MOD Administrator admin@M365x41156588.onmicrosoft.com                                           3880aa2b-be91-448c-a88c-5ee9f2c99bdf
+Alex Wilber       AlexW@M365x41156588.OnMicrosoft.com                                           351824cf-e922-4d10-b1c7-d8d45fec192e
+
+
+------------------------------
+There are no active accounts.
+To sign in, use a web browser to open the page https://login.microsoft.com/device and enter the code JX32PEC5U to authenticate.
+
+Retrieving subscriptions for the selection...
+
+[Tenant and subscription selection]
+
+No     Subscription name               Subscription ID                       Tenant
+-----  ------------------------------  ------------------------------------  ------------------------------------
+[1] *  ME-M365x41156588-jasonumiker-1  445e02c5-ef8b-4789-b866-d0adc2e7edb8  99238842-6a3b-4feb-8866-9ec5bc878bb4
+
+The default is marked with an *; the default tenant is '99238842-6a3b-4feb-8866-9ec5bc878bb4' and subscription is 'ME-M365x41156588-jasonumiker-1' (445e02c5-ef8b-4789-b866-d0adc2e7edb8).
+
+Select a subscription and tenant (Type a number or Enter for no changes): 
+
+Tenant: 99238842-6a3b-4feb-8866-9ec5bc878bb4
+Subscription: ME-M365x41156588-jasonumiker-1 (445e02c5-ef8b-4789-b866-d0adc2e7edb8)
+
+[Announcements]
+With the new Azure CLI login experience, you can select the subscription you want to use more easily. Learn more about it and its configuration at https://go.microsoft.com/fwlink/?linkid=2271236
+
+If you encounter any problem, please open an issue at https://aka.ms/azclibug
+
+[Warning] The login output has been updated. Please be aware that it no longer displays the full list of available subscriptions by default.
+
+Now we have exchanged our Agent ID (b7b1f2f6-060f-4152-b81c-a8b6b8a309db) token for my Entra User's (admin@M365x41156588.onmicrosoft.com) token OBO
+{
+  "aud": "https://graph.microsoft.com",
+  "iss": "https://sts.windows.net/99238842-6a3b-4feb-8866-9ec5bc878bb4/",
+  "iat": 1773967447,
+  "nbf": 1773967447,
+  "exp": 1773972475,
+  "acct": 0,
+  "acr": "1",
+  "acrs": [
+    "p1"
+  ],
+  "aio": "AZQAa/8bAAAAiQNbV08IpPuyRCjVr9uwabdtOMfW//3jdSA31ZawaQiiGzCYZ6gmOf9DuYAFkeYRO7ylZxC7ANI5QKewIXO74dRNKiBJQWShaJ/uQt41B8EzrKfVViVTMpVwOBmlofUlgng+VuFK/8KT53c/C9qVNeq5zqQfbIWrpsq52THSLn8Qi2TNxTVof08T5E6TBbLD",
+  "amr": [
+    "pwd",
+    "mfa"
+  ],
+  "app_displayname": "My Agent",
+  "appid": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
+  "appidacr": "2",
+  "family_name": "Administrator",
+  "given_name": "MOD",
+  "idtyp": "user",
+  "ipaddr": "54.252.157.153",
+  "name": "MOD Administrator",
+  "oid": "3880aa2b-be91-448c-a88c-5ee9f2c99bdf",
+  "platf": "8",
+  "puid": "1003200562D3E7E7",
+  "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtAMAAAAAAAAAwAAAAAAAAAAAANRCAA.",
+  "scp": "openid profile User.Read.All email",
+  "sid": "0030189a-16d5-1d1e-2cae-7a2b4122bde5",
+  "sub": "CnpcOfYUYAltW2r3qgPmGBf1XQXUJxSXGVuLQtF2Cfg",
+  "tenant_region_scope": "OC",
+  "tid": "99238842-6a3b-4feb-8866-9ec5bc878bb4",
+  "unique_name": "admin@M365x41156588.onmicrosoft.com",
+  "upn": "admin@M365x41156588.onmicrosoft.com",
+  "uti": "MKTZoRnut0mt9-Er-4cgAA",
+  "ver": "1.0",
+  "wids": [
+    "62e90394-69f5-4237-9190-012177145e10",
+    "b79fbf4d-3ef9-4689-8143-76b194e85509"
+  ],
+  "xms_act_fct": "9 3 11",
+  "xms_ftd": "fZFtAHFdNobo7bGXEgGocZdwxcj__Qyfn0DRZq45prUBYXVzdHJhbGlhZWFzdC1kc21z",
+  "xms_idrel": "30 1",
+  "xms_par_app_azp": "1ff6464b-416a-4c25-8f15-42c9c6964391",
+  "xms_st": {
+    "sub": "whv-VswLpx24fSyh_Ft1YScznU2bVJ4YODSs9tirGvM"
+  },
+  "xms_sub_fct": "3 14",
+  "xms_tcdt": 1767333340,
+  "xms_tnt_fct": "3 10"
+}
+------------------------------
+Tenant Users (retrieved from MS Graph with our User's OBO token):
 
 Display Name      User Principal Name                                                           ID
 ------------      -------------------                                                           --
