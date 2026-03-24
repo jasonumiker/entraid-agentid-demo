@@ -26,10 +26,16 @@ Run the following commands:
 Everything from sign-in-demo-secret.ps1 (if you haven't done it already) plus:
 1. `Add-BlueprintFederatedCredential -BlueprintAppId '<your Blueprint ID>' -Name 'entra-demo' -Issuer 'https://login.microsoftonline.com/<your Tenant ID>/v2.0' -Subject '<your Azure Managed ID>'`
 
+
 ### Continuing setup for sign-in-demo-aws-iam.ps1
 Everything from sign-in-demo-secret.ps1 (if you haven't done it already) plus:
 1. Run sign-in-demo-aws-iam.ps1 on an AWS EC2 Instance or Lambda Function etc. and you'll see the decoded JWT token to use to fill in the values in the next command
 1. `Add-BlueprintFederatedCredential -BlueprintAppId '<your Blueprint ID>' -Name 'entra-demo-aws' -Issuer '<iss from above>' -Subject '<sub from above>'`
+
+### Continuing setup for sign-in-demo-gcp-iam.ps1
+Everything from sign-in-demo-secret.ps1 (if you haven't done it already) plus:
+1. Run sign-in-demo-gcp-iam.ps1 on a GCP VM etc. and you'll see the decoded JWT token to use to fill in the values in the next command
+1. `Add-BlueprintFederatedCredential -BlueprintAppId '<your Blueprint ID>' -Name 'entra-demo-gcp' -Issuer 'https://accounts.google.com' -Subject '<sub from above>'`
 
 ## Running the demos
 
@@ -37,6 +43,7 @@ After you've filled in the required variables at the top of the scripts you can:
 1. You can run sign-in-demo-secret.ps1 from anywhere - because you are authenticating with a secret copied into a variable at the top of the file
 1. You can run sign-in-demo-azuremanagedidentity.ps1 from a VM or function etc. in Azure
 1. You can run sign-in-demo-aws-iam.ps1 from a EC2 Instance or Lambda function etc. in AWS
+1. You can run sign-in-demo-gcp-iam.ps1 from a VM etc. in GCP
 
 ## Sample outputs
 
