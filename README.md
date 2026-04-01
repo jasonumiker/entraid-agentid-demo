@@ -1,6 +1,6 @@
 # Entra ID Agent ID Demo
 
-NOTE: I know I need to do more work here in documenting this all better
+TODO: I know I need to do more work here in documenting the prerequistes for these scripts such as Powershell, the cloud CLIs they call, etc.
 
 ## Setting up Entra ID Agent ID for the Demos
 
