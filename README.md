@@ -1,6 +1,10 @@
 # Entra ID Agent ID Demo
 
-TODO: I know I need to do more work here in documenting the prerequistes for these scripts such as Powershell, the cloud CLIs they call, etc.
+This is the demo for the blog post https://medium.com/@jason-umiker/deep-dive-into-microsofts-new-solution-for-agentic-identity-entra-id-agent-id-de26792660eb
+
+## Prerequisites
+
+TODO: I know I need to do more work here in documenting the prerequistes for these scripts such as Powershell, the cloud CLIs they call, as well as how to spin up VMs in each cloud to call them with the right managed identities assigned etc.
 
 ## Setting up Entra ID Agent ID for the Demos
 
