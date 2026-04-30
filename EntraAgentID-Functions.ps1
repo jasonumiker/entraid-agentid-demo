@@ -175,8 +175,14 @@ function New-AgentIdentityBlueprint {
     .PARAMETER TenantId
     The Entra tenant ID.
     
+    .PARAMETER Tags
+    Optional array of tag strings to set on the blueprint application.
+    
     .EXAMPLE
     New-AgentIdentityBlueprint -BlueprintName "Production Blueprint" -TenantId "xxx-xxx"
+    
+    .EXAMPLE
+    New-AgentIdentityBlueprint -BlueprintName "Production Blueprint" -TenantId "xxx-xxx" -Tags @("env:prod", "team:platform")
     #>
     param(
         [Parameter(Mandatory = $true, HelpMessage = "Please provide a name for the blueprint (e.g., 'Production Blueprint', 'Weather Agent Blueprint')")]
@@ -184,7 +190,10 @@ function New-AgentIdentityBlueprint {
         [string]$BlueprintName,
         
         [Parameter(Mandatory = $true)]
-        [string]$TenantId
+        [string]$TenantId,
+        
+        [Parameter(Mandatory = $false)]
+        [string[]]$Tags
     )
     
     Write-Host "[INFO] Step 2: Creating Agent Identity Blueprint..." -ForegroundColor Cyan
@@ -246,6 +255,11 @@ function New-AgentIdentityBlueprint {
         displayName           = $BlueprintName
         "sponsors@odata.bind" = @("https://graph.microsoft.com/v1.0/users/$myUserId")
         "owners@odata.bind"   = @("https://graph.microsoft.com/v1.0/users/$myUserId")
+    }
+    
+    if ($Tags -and $Tags.Count -gt 0) {
+        $body.tags = @($Tags)
+        Write-Host "  Tags: $($Tags -join ', ')" -ForegroundColor Gray
     }
     
     $blueprint = Invoke-MgGraphRequest -Method POST `
@@ -1844,6 +1858,9 @@ function Start-EntraAgentIDWorkflow {
         [string[]]$Permissions = @("User.Read.All"),
         
         [Parameter(Mandatory = $false)]
+        [string[]]$Tags,
+        
+        [Parameter(Mandatory = $false)]
         [switch]$CreateAgentUser,
         
         [Parameter(Mandatory = $false)]
@@ -1871,6 +1888,9 @@ function Start-EntraAgentIDWorkflow {
         $blueprintParams = @{
             BlueprintName = $BlueprintName
             TenantId      = $connection.TenantId
+        }
+        if ($Tags -and $Tags.Count -gt 0) {
+            $blueprintParams.Tags = $Tags
         }
         
         $blueprint = New-AgentIdentityBlueprint @blueprintParams
@@ -2018,6 +2038,206 @@ function Get-BlueprintList {
         -Uri "https://graph.microsoft.com/beta/applications/graph.agentIdentityBlueprint"
     
     $blueprints.value | Select-Object displayName, appId, id | Format-Table -AutoSize
+}
+
+function Get-AgentIdentityBlueprintDetails {
+    <#
+    .SYNOPSIS
+    Retrieves detailed information about an existing Agent Identity Blueprint, including tags.
+    
+    .DESCRIPTION
+    Looks up the blueprint application by either its App ID (client ID) or Object ID and
+    returns the full application object, including displayName, appId, id, tags,
+    identifierUris, and other metadata.
+    
+    .PARAMETER BlueprintAppId
+    The App ID (client ID) of the blueprint application.
+    
+    .PARAMETER BlueprintObjectId
+    The Object ID of the blueprint application.
+    
+    .EXAMPLE
+    Get-AgentIdentityBlueprintDetails -BlueprintAppId "aaaa-bbbb-cccc"
+    
+    .EXAMPLE
+    Get-AgentIdentityBlueprintDetails -BlueprintObjectId "1111-2222-3333"
+    #>
+    [CmdletBinding(DefaultParameterSetName = 'ByAppId')]
+    param(
+        [Parameter(Mandatory = $true, ParameterSetName = 'ByAppId')]
+        [string]$BlueprintAppId,
+        
+        [Parameter(Mandatory = $true, ParameterSetName = 'ByObjectId')]
+        [string]$BlueprintObjectId
+    )
+    
+    Write-Host "[INFO] Retrieving Blueprint details..." -ForegroundColor Cyan
+    
+    if ($PSCmdlet.ParameterSetName -eq 'ByAppId') {
+        $apps = (Invoke-MgGraphRequest -Method GET `
+            -Uri "https://graph.microsoft.com/beta/applications?`$filter=appId eq '$BlueprintAppId'").value
+        
+        if (-not $apps -or $apps.Count -eq 0) {
+            Write-Host "  [ERROR] Blueprint not found with appId: $BlueprintAppId" -ForegroundColor Red
+            return $null
+        }
+        $blueprint = $apps[0]
+    }
+    else {
+        try {
+            $blueprint = Invoke-MgGraphRequest -Method GET `
+                -Uri "https://graph.microsoft.com/beta/applications/$BlueprintObjectId"
+        }
+        catch {
+            Write-Host "  [ERROR] Blueprint not found with objectId: $BlueprintObjectId" -ForegroundColor Red
+            Write-Host "  Error: $($_.Exception.Message)" -ForegroundColor Gray
+            return $null
+        }
+    }
+    
+    Write-Host "  Display Name:    $($blueprint.displayName)" -ForegroundColor White
+    Write-Host "  App ID:          $($blueprint.appId)" -ForegroundColor Gray
+    Write-Host "  Object ID:       $($blueprint.id)" -ForegroundColor Gray
+    Write-Host "  Identifier URIs: $($blueprint.identifierUris -join ', ')" -ForegroundColor Gray
+    if ($blueprint.tags -and $blueprint.tags.Count -gt 0) {
+        Write-Host "  Tags:            $($blueprint.tags -join ', ')" -ForegroundColor Gray
+    }
+    else {
+        Write-Host "  Tags:            (none)" -ForegroundColor Gray
+    }
+    Write-Host "  Created:         $($blueprint.createdDateTime)" -ForegroundColor Gray
+    Write-Host ""
+    
+    return $blueprint
+}
+
+function Set-AgentIdentityBlueprintTags {
+    <#
+    .SYNOPSIS
+    Updates the tags on an existing Agent Identity Blueprint.
+    
+    .DESCRIPTION
+    Sets, adds, or removes tags on a blueprint application. By default, the supplied
+    tags REPLACE the existing tag list. Use -Append to merge with existing tags, or
+    -Remove to remove the specified tags from the existing list.
+    
+    .PARAMETER BlueprintAppId
+    The App ID (client ID) of the blueprint application.
+    
+    .PARAMETER BlueprintObjectId
+    The Object ID of the blueprint application.
+    
+    .PARAMETER Tags
+    The tags to set, append, or remove.
+    
+    .PARAMETER Append
+    If specified, merges the supplied tags with existing tags instead of replacing them.
+    
+    .PARAMETER Remove
+    If specified, removes the supplied tags from the existing list.
+    
+    .EXAMPLE
+    Set-AgentIdentityBlueprintTags -BlueprintAppId "aaaa-bbbb" -Tags @("env:prod", "team:platform")
+    
+    .EXAMPLE
+    Set-AgentIdentityBlueprintTags -BlueprintAppId "aaaa-bbbb" -Tags @("owner:alice") -Append
+    
+    .EXAMPLE
+    Set-AgentIdentityBlueprintTags -BlueprintAppId "aaaa-bbbb" -Tags @("env:dev") -Remove
+    
+    .EXAMPLE
+    Set-AgentIdentityBlueprintTags -BlueprintAppId "aaaa-bbbb" -Tags @()   # clears all tags
+    #>
+    [CmdletBinding(DefaultParameterSetName = 'ByAppId')]
+    param(
+        [Parameter(Mandatory = $true, ParameterSetName = 'ByAppId')]
+        [Parameter(Mandatory = $true, ParameterSetName = 'ByAppIdAppend')]
+        [Parameter(Mandatory = $true, ParameterSetName = 'ByAppIdRemove')]
+        [string]$BlueprintAppId,
+        
+        [Parameter(Mandatory = $true, ParameterSetName = 'ByObjectId')]
+        [Parameter(Mandatory = $true, ParameterSetName = 'ByObjectIdAppend')]
+        [Parameter(Mandatory = $true, ParameterSetName = 'ByObjectIdRemove')]
+        [string]$BlueprintObjectId,
+        
+        [Parameter(Mandatory = $true, Position = 0)]
+        [AllowEmptyCollection()]
+        [string[]]$Tags,
+        
+        [Parameter(Mandatory = $true, ParameterSetName = 'ByAppIdAppend')]
+        [Parameter(Mandatory = $true, ParameterSetName = 'ByObjectIdAppend')]
+        [switch]$Append,
+        
+        [Parameter(Mandatory = $true, ParameterSetName = 'ByAppIdRemove')]
+        [Parameter(Mandatory = $true, ParameterSetName = 'ByObjectIdRemove')]
+        [switch]$Remove
+    )
+    
+    Write-Host "[INFO] Updating Blueprint tags..." -ForegroundColor Cyan
+    
+    # Resolve the blueprint object
+    if ($BlueprintObjectId) {
+        try {
+            $blueprint = Invoke-MgGraphRequest -Method GET `
+                -Uri "https://graph.microsoft.com/beta/applications/$BlueprintObjectId"
+        }
+        catch {
+            throw "Blueprint not found with objectId: $BlueprintObjectId"
+        }
+    }
+    else {
+        $apps = (Invoke-MgGraphRequest -Method GET `
+            -Uri "https://graph.microsoft.com/beta/applications?`$filter=appId eq '$BlueprintAppId'").value
+        if (-not $apps -or $apps.Count -eq 0) {
+            throw "Blueprint not found with appId: $BlueprintAppId"
+        }
+        $blueprint = $apps[0]
+    }
+    
+    $objectId = $blueprint.id
+    $existingTags = @()
+    if ($blueprint.tags) {
+        $existingTags = @($blueprint.tags)
+    }
+    
+    Write-Host "  Blueprint:     $($blueprint.displayName) ($($blueprint.appId))" -ForegroundColor Gray
+    Write-Host "  Existing Tags: $(if ($existingTags.Count -gt 0) { $existingTags -join ', ' } else { '(none)' })" -ForegroundColor Gray
+    
+    if ($Append) {
+        $newTags = @($existingTags + $Tags | Select-Object -Unique)
+        Write-Host "  Mode:          Append" -ForegroundColor Gray
+    }
+    elseif ($Remove) {
+        $newTags = @($existingTags | Where-Object { $_ -notin $Tags })
+        Write-Host "  Mode:          Remove" -ForegroundColor Gray
+    }
+    else {
+        $newTags = @($Tags)
+        Write-Host "  Mode:          Replace" -ForegroundColor Gray
+    }
+    
+    Write-Host "  New Tags:      $(if ($newTags.Count -gt 0) { $newTags -join ', ' } else { '(none)' })" -ForegroundColor Gray
+    
+    $patchBody = @{ tags = $newTags }
+    
+    try {
+        Invoke-MgGraphRequest -Method PATCH `
+            -Uri "https://graph.microsoft.com/beta/applications/$objectId" `
+            -Body ($patchBody | ConvertTo-Json) `
+            -ContentType "application/json" | Out-Null
+        
+        Write-Host "  [OK] Tags updated" -ForegroundColor Green
+    }
+    catch {
+        Write-Host "  [ERROR] Failed to update tags: $($_.Exception.Message)" -ForegroundColor Red
+        throw $_
+    }
+    
+    return @{
+        BlueprintAppId    = $blueprint.appId
+        BlueprintObjectId = $objectId
+        Tags              = $newTags
+    }
 }
 
 #endregion
@@ -2319,6 +2539,8 @@ Write-Host "  New-AgentUser -AgentIdentityId '<agent-app-id>' -DisplayName 'Agen
 Write-Host "  Get-AgentUsersList" -ForegroundColor Gray
 Write-Host "  Get-AgentIdentityList" -ForegroundColor Gray
 Write-Host "  Get-BlueprintList" -ForegroundColor Gray
+Write-Host "  Get-AgentIdentityBlueprintDetails -BlueprintAppId '<id>'" -ForegroundColor Gray
+Write-Host "  Set-AgentIdentityBlueprintTags -BlueprintAppId '<id>' -Tags @('env:prod','team:platform')" -ForegroundColor Gray
 Write-Host ""
 Write-Host "OBO / SPA Functions:" -ForegroundColor Cyan
 Write-Host "  New-AgentIdentitySpaApp -DisplayName 'My SPA' -BlueprintAppId '<id>' -TenantId '<id>'" -ForegroundColor Gray
