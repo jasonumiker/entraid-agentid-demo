@@ -24,7 +24,7 @@ AWS OIDC Token (Outbound Identity Federation) we're using to authenticate to the
   "jti": "eab3a0c3-65de-41af-a312-158ee0d73144"
 }
 ------------------------------
-Blueprint's (1ff6464b-416a-4c25-8f15-42c9c6964391) Access Token:
+Blueprint's (d7ad46be-1aaf-45d4-9a60-419625acdf09) Access Token:
 {
   "aud": "fb60f99c-7a34-4190-8149-302f77469936",
   "iss": "https://login.microsoftonline.com/99238842-6a3b-4feb-8866-9ec5bc878bb4/v2.0",
@@ -32,12 +32,12 @@ Blueprint's (1ff6464b-416a-4c25-8f15-42c9c6964391) Access Token:
   "nbf": 1773967405,
   "exp": 1773971305,
   "aio": "ASQA2/8bAAAAmeZOoGKCGZe1zqqDvdtedo2Z2nh6/UrDCJs7mswzNIY=",
-  "azp": "1ff6464b-416a-4c25-8f15-42c9c6964391",
+  "azp": "d7ad46be-1aaf-45d4-9a60-419625acdf09",
   "azpacr": "2",
   "idtyp": "app",
   "oid": "743a531c-66bf-49cf-9a19-17ecfae187e7",
   "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtJz5YPs0epBBgUkwL3dGmTYAAABCAA.",
-  "sub": "/eid1/c/pub/t/QogjmTtq60-IZp7FvIeLtA/a/S0b2H2pBJUyPFULJxpZDkQ/b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
+  "sub": "/eid1/c/pub/t/QogjmTtq60-IZp7FvIeLtA/a/S0b2H2pBJUyPFULJxpZDkQ/2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
   "tid": "99238842-6a3b-4feb-8866-9ec5bc878bb4",
   "uti": "4oRMYm6M-0igxWsYT3IIAA",
   "ver": "2.0",
@@ -48,7 +48,7 @@ Blueprint's (1ff6464b-416a-4c25-8f15-42c9c6964391) Access Token:
   "xms_sub_fct": "3 9"
 }
 ------------------------------
-Exchanged for the Agent ID's (b7b1f2f6-060f-4152-b81c-a8b6b8a309db) Access Token:
+Exchanged for the Agent ID's (2fd494f6-ac21-46eb-a888-f9d5b251c0f8) Access Token:
 {
   "aud": "https://graph.microsoft.com",
   "iss": "https://sts.windows.net/99238842-6a3b-4feb-8866-9ec5bc878bb4/",
@@ -57,16 +57,16 @@ Exchanged for the Agent ID's (b7b1f2f6-060f-4152-b81c-a8b6b8a309db) Access Token
   "exp": 1773971305,
   "aio": "k2ZgYLDmToo5w2MtfH9Kle9l8wuPp/zTecYpI/G1+aaOSUn1QRYA",
   "app_displayname": "My Agent",
-  "appid": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
+  "appid": "2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
   "appidacr": "2",
   "idp": "https://sts.windows.net/99238842-6a3b-4feb-8866-9ec5bc878bb4/",
   "idtyp": "app",
-  "oid": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
+  "oid": "2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
   "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtAMAAAAAAAAAwAAAAAAAAAAAAABCAA.",
   "roles": [
     "User.Read.All"
   ],
-  "sub": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
+  "sub": "2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
   "tenant_region_scope": "OC",
   "tid": "99238842-6a3b-4feb-8866-9ec5bc878bb4",
   "uti": "eLszq3T_s0OMR6BBMjwdAA",
@@ -77,7 +77,7 @@ Exchanged for the Agent ID's (b7b1f2f6-060f-4152-b81c-a8b6b8a309db) Access Token
   "xms_act_fct": "3 9 11",
   "xms_ftd": "BqcC-Qwyu7D4VLg0f6PmpZUFlwJAOtYwkX92zCh7KgUBYXVzdHJhbGlhYy1kc21z",
   "xms_idrel": "7 28",
-  "xms_par_app_azp": "1ff6464b-416a-4c25-8f15-42c9c6964391",
+  "xms_par_app_azp": "d7ad46be-1aaf-45d4-9a60-419625acdf09",
   "xms_rd": "0.42LlYBJidBIS4WAXEuD6qGCxx7XXb5aLlPD3A3luQFFOIYFbM9tCnzYkec2fZv30Z0fUc6Aoh5AAMwMEHIDSQFFuIQGjNM-zDBU6ZZtEJ7CfzJsQJMXHwSXEZWhubmxpZm5iYAoA",
   "xms_sub_fct": "11 3 9",
   "xms_tcdt": 1767333340,
@@ -104,12 +104,12 @@ New Agent ID token scoped to AzureADTokenExchange (needed for exchange) instead 
   "nbf": 1773967406,
   "exp": 1773971306,
   "aio": "ASQA2/8bAAAAOpF+NQCTQAGb3aOYSfthikiLoDGfy7vf/HMVoOLdOEM=",
-  "azp": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
+  "azp": "2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
   "azpacr": "2",
   "idtyp": "app",
-  "oid": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
+  "oid": "2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
   "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtJz5YPs0epBBgUkwL3dGmTYAAABCAA.",
-  "sub": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
+  "sub": "2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
   "tid": "99238842-6a3b-4feb-8866-9ec5bc878bb4",
   "uti": "bEXA3CYwLkWJadac630HAA",
   "ver": "2.0",
@@ -117,11 +117,11 @@ New Agent ID token scoped to AzureADTokenExchange (needed for exchange) instead 
   "xms_ficinfo": "CAAQABgAIAAoAzAAOAE",
   "xms_ftd": "WX3S7pEl8PpKO_sh8JD8xjiTB2L9uYOObjzEP5imoeYBYXVzdHJhbGlhZWFzdC1kc21z",
   "xms_idrel": "18 7",
-  "xms_par_app_azp": "1ff6464b-416a-4c25-8f15-42c9c6964391",
+  "xms_par_app_azp": "d7ad46be-1aaf-45d4-9a60-419625acdf09",
   "xms_sub_fct": "11 9 3"
 }
 ------------------------------
-Exchanging that new Agent ID (b7b1f2f6-060f-4152-b81c-a8b6b8a309db) token for the Agent User's (MyAgentUser@M365x41156588.onmicrosoft.com) Access Token
+Exchanging that new Agent ID (2fd494f6-ac21-46eb-a888-f9d5b251c0f8) token for the Agent User's (MyAgentUser@M365x41156588.onmicrosoft.com) Access Token
 {
   "aud": "https://graph.microsoft.com",
   "iss": "https://sts.windows.net/99238842-6a3b-4feb-8866-9ec5bc878bb4/",
@@ -136,12 +136,12 @@ Exchanging that new Agent ID (b7b1f2f6-060f-4152-b81c-a8b6b8a309db) token for th
   ],
   "aio": "AbQAS/8bAAAAWs7mwC/qM2VfRxzW0A2bDhLf+c7qKLAYjKSeANHibhFBZVMQi7pz+BnLb0u9TPGGITNEC+UJENTmELmtQ3AOoJsytWaf6dwARU9dRr9NXsRAtzwYX9G2yuKh+7/GKrKTrQqcr1R9+k3NliyLBsTxqZfRKvslCMNlQbFThw6SYkki0YxkCrwF6Lt2HNBFJ5Y8zXKUZBC3lldNPucguFi8coP+lmzDvaYuDK+GYUzqgCs=",
   "app_displayname": "My Agent",
-  "appid": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
+  "appid": "2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
   "appidacr": "2",
   "idtyp": "user",
   "ipaddr": "54.252.157.153",
   "name": "My Agent User",
-  "oid": "937fd89c-e466-415a-b3ba-8fd6ae437658",
+  "oid": "54c88506-ad44-462f-bfb7-b68f4a6b6c8b",
   "platf": "8",
   "puid": "10032005A65F837B",
   "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtAMAAAAAAAAAwAAAAAAAAAAAAOlCAA.",
@@ -160,7 +160,7 @@ Exchanging that new Agent ID (b7b1f2f6-060f-4152-b81c-a8b6b8a309db) token for th
   "xms_act_fct": "11 9 3",
   "xms_ftd": "r8R-9nYTJMtkZlFtKDBJjqV8_WyH_JpAbXququa5mm8BYXVzdHJhbGlhZWFzdC1kc21z",
   "xms_idrel": "1 4",
-  "xms_par_app_azp": "1ff6464b-416a-4c25-8f15-42c9c6964391",
+  "xms_par_app_azp": "d7ad46be-1aaf-45d4-9a60-419625acdf09",
   "xms_st": {
     "sub": "edS7anl9s3BuDETITpvSaEVFyc8SoYVgsPWPOFqY-yc"
   },
@@ -206,7 +206,7 @@ If you encounter any problem, please open an issue at https://aka.ms/azclibug
 
 [Warning] The login output has been updated. Please be aware that it no longer displays the full list of available subscriptions by default.
 
-Now we have exchanged our Agent ID (b7b1f2f6-060f-4152-b81c-a8b6b8a309db) token for my Entra User's (admin@M365x41156588.onmicrosoft.com) token OBO
+Now we have exchanged our Agent ID (2fd494f6-ac21-46eb-a888-f9d5b251c0f8) token for my Entra User's (admin@M365x41156588.onmicrosoft.com) token OBO
 {
   "aud": "https://graph.microsoft.com",
   "iss": "https://sts.windows.net/99238842-6a3b-4feb-8866-9ec5bc878bb4/",
@@ -224,7 +224,7 @@ Now we have exchanged our Agent ID (b7b1f2f6-060f-4152-b81c-a8b6b8a309db) token 
     "mfa"
   ],
   "app_displayname": "My Agent",
-  "appid": "b7b1f2f6-060f-4152-b81c-a8b6b8a309db",
+  "appid": "2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
   "appidacr": "2",
   "family_name": "Administrator",
   "given_name": "MOD",
@@ -251,7 +251,7 @@ Now we have exchanged our Agent ID (b7b1f2f6-060f-4152-b81c-a8b6b8a309db) token 
   "xms_act_fct": "9 3 11",
   "xms_ftd": "fZFtAHFdNobo7bGXEgGocZdwxcj__Qyfn0DRZq45prUBYXVzdHJhbGlhZWFzdC1kc21z",
   "xms_idrel": "30 1",
-  "xms_par_app_azp": "1ff6464b-416a-4c25-8f15-42c9c6964391",
+  "xms_par_app_azp": "d7ad46be-1aaf-45d4-9a60-419625acdf09",
   "xms_st": {
     "sub": "whv-VswLpx24fSyh_Ft1YScznU2bVJ4YODSs9tirGvM"
   },

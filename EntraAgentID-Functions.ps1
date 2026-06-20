@@ -1423,7 +1423,7 @@ function Add-BlueprintExposedScope {
     The App ID (client ID) of the blueprint application.
 
     .EXAMPLE
-    Add-BlueprintExposedScope -BlueprintAppId "1ff6464b-416a-4c25-8f15-42c9c6964391"
+    Add-BlueprintExposedScope -BlueprintAppId "d7ad46be-1aaf-45d4-9a60-419625acdf09"
     #>
     param(
         [Parameter(Mandatory = $true)]

@@ -1,7 +1,7 @@
-$blueprintAppId = "1ff6464b-416a-4c25-8f15-42c9c6964391"
+$blueprintAppId = "d7ad46be-1aaf-45d4-9a60-419625acdf09"
 $tenantId = "99238842-6a3b-4feb-8866-9ec5bc878bb4"
-$agentIdentityAppId = "b7b1f2f6-060f-4152-b81c-a8b6b8a309db"
-$agentUserId = "937fd89c-e466-415a-b3ba-8fd6ae437658"
+$agentIdentityAppId = "2fd494f6-ac21-46eb-a888-f9d5b251c0f8"
+$agentUserId = "54c88506-ad44-462f-bfb7-b68f4a6b6c8b"
 $agentUserPrincipalName = "MyAgentUser@M365x41156588.onmicrosoft.com"
 $vmManagedIdentityId = "087b6eb6-06f3-4e42-9a0b-22a938b92e4d"
 $managedIdentityClientId = $env:MANAGED_IDENTITY_CLIENT_ID
@@ -151,6 +151,7 @@ $managedIdentityAssertionPayload = Get-DecodedJwtToken -Token $managedIdentityAs
 Write-Host "Managed Identity Token ($vmManagedIdentityId) we're using to authenticate to the Blueprint via Federation:"
 Write-Host "$($managedIdentityAssertionPayload)"
 Write-Host "------------------------------"
+Read-Host "Press Enter to continue"
 
 $blueprintTokenBody = @{
     client_id = $blueprintAppId
@@ -172,6 +173,7 @@ $blueprintTokenPayload = Get-DecodedJwtToken -Token $blueprintToken
 Write-Host "Blueprint's ($blueprintAppId) Access Token:"
 Write-Host "$($blueprintTokenPayload)"
 Write-Host "------------------------------"
+Read-Host "Press Enter to continue"
 
 # Exchange Blueprint token for the Agent ID token
 $agentIdTokenBodyGraph = @{
@@ -193,6 +195,7 @@ $agentIdTokenPayloadGraph = Get-DecodedJwtToken -Token $agentIdTokenGraph
 Write-Host "Exchanged for the Agent ID's ($agentIdentityAppId) Access Token:"
 Write-Host "$($agentIdTokenPayloadGraph)"
 Write-Host "------------------------------"
+Read-Host "Press Enter to continue"
 
 # Use the Agent ID token to call Microsoft Graph
 # We'll ask it to list Users in the tenant, which requires the "User.Read.All" permission
@@ -218,6 +221,7 @@ $userTable = $agentIdMsGraphTestResponse.value | Select-Object @{
 
 Write-Host $userTable
 Write-Host "------------------------------"
+Read-Host "Press Enter to continue"
 
 # Get another token for the Agent ID but this time scoped to api://AzureADTokenExchange/.default not the MS Graph
 $agentIdTokenBody = @{
@@ -239,6 +243,7 @@ $agentIdTokenPayload = Get-DecodedJwtToken -Token $agentIdToken
 Write-Host "New Agent ID token scoped to AzureADTokenExchange (needed for exchange) instead of MS Graph"
 Write-Host "$($agentIdTokenPayload)"
 Write-Host "------------------------------"
+Read-Host "Press Enter to continue"
 
 
 # Exchange that for the Agent User token
@@ -263,6 +268,7 @@ $agentUserTokenPayload = Get-DecodedJwtToken -Token $agentUserToken
 Write-Host "Exchanging that new Agent ID ($agentIdentityAppId) token for the Agent User's ($agentUserPrincipalName) Access Token"
 Write-Host "$($agentUserTokenPayload)"
 Write-Host "------------------------------"
+Read-Host "Press Enter to continue"
 
 # Use the Agent User's token to call Microsoft Graph
 # We'll ask it to list Users in the tenant, which requires the "User.Read.All" permission
@@ -288,6 +294,7 @@ $userTable = $agentUserMsGraphTestResponse.value | Select-Object @{
 
 Write-Host $userTable
 Write-Host "------------------------------"
+Read-Host "Press Enter to continue"
 
 #Exchange for my User's Entra ID token using OBO flow
 az logout
@@ -313,6 +320,7 @@ $userTokenPayload = Get-DecodedJwtToken -Token $userToken
 Write-Host "Now we have exchanged our Agent ID ($agentIdentityAppId) token for my Entra User's (admin@M365x41156588.onmicrosoft.com) token OBO"
 Write-Host "$($userTokenPayload)"
 Write-Host "------------------------------"
+Read-Host "Press Enter to continue"
 
 # Use my User's OBO token to call the Microsoft Graph API
 # We'll ask it to list Users in the tenant, which requires the "User.Read.All" permission
@@ -338,3 +346,4 @@ $userTable = $userMsGraphTestResponse.value | Select-Object @{
 
 Write-Host $userTable
 Write-Host "------------------------------"
+Read-Host "Press Enter to continue"
