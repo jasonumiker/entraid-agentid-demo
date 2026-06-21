@@ -41,6 +41,10 @@ Everything from sign-in-demo-secret.ps1 (if you haven't done it already) plus:
 1. Run sign-in-demo-gcp-iam.ps1 on a GCP VM etc. and you'll see the decoded JWT token to use to fill in the values in the next command
 1. `Add-BlueprintFederatedCredential -BlueprintAppId '<your Blueprint ID>' -Name 'entra-demo-gcp' -Issuer 'https://accounts.google.com' -Subject '<sub from above>'`
 
+### Setting up for the AWS Bedrock Agentcore Demo
+
+[TODO] Add instructions here
+
 ## Running the demos
 
 After you've filled in the required variables at the top of the scripts you can:
@@ -48,7 +52,14 @@ After you've filled in the required variables at the top of the scripts you can:
 1. You can run sign-in-demo-azuremanagedidentity.ps1 from a VM or function etc. in Azure
 1. You can run sign-in-demo-aws-iam.ps1 from a EC2 Instance or Lambda function etc. in AWS
 1. You can run sign-in-demo-gcp-iam.ps1 from a VM etc. in GCP
+1. You can run the AWS Bedrock Agentcore demo either locally (with the IAM Role of your local CLI Federated) or after deploying it to AWS (Federating the Role)
+    1. [TODO] Local Instructions
+    1. [TODO] In AWS Instructions
 
 ## Sample outputs
 
 If you don't want to build the environments and run the scripts yourself you can see sample outputs of the various commands in the output-*.txt files in the repo.
+
+## Seeing all the things Federated/Trusted by the Blueprint
+
+

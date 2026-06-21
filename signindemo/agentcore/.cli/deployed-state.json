@@ -1,0 +1,17 @@
+{
+  "targets": {
+    "default": {
+      "resources": {
+        "runtimes": {
+          "signindemo": {
+            "runtimeId": "signindemo_signindemo-mo2MbMCqIN",
+            "runtimeArn": "arn:aws:bedrock-agentcore:ap-southeast-2:281031839323:runtime/signindemo_signindemo-mo2MbMCqIN",
+            "roleArn": "arn:aws:iam::281031839323:role/AgentCore-signindemo-defa-ApplicationAgentSignindem-3FyKCydtIJrX"
+          }
+        },
+        "stackName": "AgentCore-signindemo-default",
+        "deployHash": "815ab54b4b16fea9"
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "signindemo"
+version = "0.1.0"
+description = "AgentCore Runtime Application using Strands SDK"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "bedrock-agentcore >= 1.9.1",
+    "boto3 >= 1.35.0",
+    "botocore >= 1.35.0",
+    "requests >= 2.32.0",
+]
+
+[project.optional-dependencies]
+telemetry = [
+    "aws-opentelemetry-distro",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]

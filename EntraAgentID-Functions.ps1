@@ -1689,6 +1689,86 @@ function Add-BlueprintFederatedCredential {
     }
 }
 
+function Get-BlueprintFederatedCredentials {
+    <#
+    .SYNOPSIS
+    Gets federated identity credentials configured on a blueprint application.
+
+    .DESCRIPTION
+    Looks up the blueprint application by appId, then lists all federated identity
+    credentials (trusted external identities) configured on that blueprint.
+
+    .PARAMETER BlueprintAppId
+    The App ID (client ID) of the blueprint application.
+
+    .PARAMETER Name
+    Optional credential name filter. If specified, returns only matching credential(s).
+
+    .PARAMETER AsJson
+    If specified, prints full credential objects as JSON.
+
+    .EXAMPLE
+    Get-BlueprintFederatedCredentials -BlueprintAppId "ae6aff65-..."
+
+    .EXAMPLE
+    Get-BlueprintFederatedCredentials -BlueprintAppId "ae6aff65-..." -Name "aws-iam-role"
+    #>
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$BlueprintAppId,
+
+        [Parameter(Mandatory = $false)]
+        [string]$Name,
+
+        [Parameter(Mandatory = $false)]
+        [switch]$AsJson
+    )
+
+    Write-Host "[INFO] Getting Federated Identity Credentials for Blueprint..." -ForegroundColor Cyan
+
+    # Look up the blueprint application object
+    $blueprintApps = (Invoke-MgGraphRequest -Method GET `
+        -Uri "https://graph.microsoft.com/v1.0/applications?`$filter=appId eq '$BlueprintAppId'").value
+
+    if (-not $blueprintApps -or $blueprintApps.Count -eq 0) {
+        throw "Blueprint application not found with appId: $BlueprintAppId"
+    }
+
+    $blueprintApp = $blueprintApps[0]
+    Write-Host "  Blueprint Object ID: $($blueprintApp.id)" -ForegroundColor Gray
+
+    $response = Invoke-MgGraphRequest -Method GET `
+        -Uri "https://graph.microsoft.com/v1.0/applications/$($blueprintApp.id)/federatedIdentityCredentials"
+
+    $credentials = @()
+    if ($response.value) {
+        $credentials = @($response.value)
+    }
+
+    if ($Name) {
+        $credentials = $credentials | Where-Object { $_.name -eq $Name }
+    }
+
+    if (-not $credentials -or $credentials.Count -eq 0) {
+        if ($Name) {
+            Write-Host "  [INFO] No federated credential found named '$Name'." -ForegroundColor Yellow
+        }
+        else {
+            Write-Host "  [INFO] No federated credentials found on this blueprint." -ForegroundColor Yellow
+        }
+        return @()
+    }
+
+    Write-Host "  [OK] Found $($credentials.Count) federated credential(s)." -ForegroundColor Green
+
+    if ($AsJson) {
+        $credentials | ConvertTo-Json -Depth 10
+    }
+    else {
+        $credentials | Select-Object name, issuer, subject, audiences, description
+    }
+}
+
 #endregion
 
 #region Step 6: Test Agent Token
