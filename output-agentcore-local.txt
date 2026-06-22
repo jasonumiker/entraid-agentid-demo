@@ -1,0 +1,187 @@
+2026-06-22 10:42:45,173 INFO Starting Entra ID Agent ID federation walkthrough in AgentCore.
+2026-06-22 10:42:45,174 INFO ------------------------------
+2026-06-22 10:42:45,254 INFO Found credentials in shared credentials file: ~/.aws/credentials
+2026-06-22 10:42:45,533 INFO AWS Caller Identity (this AgentCore Runtime's execution role):
+2026-06-22 10:42:45,533 INFO   Account: 281031839323
+  UserId:  AIDAUC3WNRZNTF7QDAIFQ
+  Arn:     arn:aws:iam::281031839323:user/jason
+2026-06-22 10:42:45,533 INFO ------------------------------
+2026-06-22 10:42:45,533 INFO Requesting OIDC token from AWS STS (Outbound Identity Federation)...
+2026-06-22 10:42:45,601 INFO AWS OIDC Token (Outbound Identity Federation) we're using to authenticate to the Blueprint via Federation:
+2026-06-22 10:42:45,602 INFO {
+  "aud": "api://AzureADTokenExchange",
+  "sub": "arn:aws:iam::281031839323:user/jason",
+  "https://sts.amazonaws.com/": {
+    "aws_account": "281031839323",
+    "source_region": "ap-southeast-2",
+    "principal_id": "arn:aws:iam::281031839323:user/jason"
+  },
+  "iss": "https://a1a27637-f90c-476d-807e-38f0eef30d60.tokens.sts.global.api.aws",
+  "exp": 1782089263,
+  "iat": 1782088963,
+  "jti": "1f4af37a-eb5b-4c3b-881d-65f3f82ea7b3"
+}
+2026-06-22 10:42:45,602 INFO ------------------------------
+2026-06-22 10:42:46,051 INFO Blueprint's (d7ad46be-1aaf-45d4-9a60-419625acdf09) Access Token:
+2026-06-22 10:42:46,052 INFO {
+  "aud": "fb60f99c-7a34-4190-8149-302f77469936",
+  "iss": "https://login.microsoftonline.com/99238842-6a3b-4feb-8866-9ec5bc878bb4/v2.0",
+  "iat": 1782088663,
+  "nbf": 1782088663,
+  "exp": 1782092563,
+  "aio": "ASQA2/8cAAAAs3QAirzt7jR25/KTDOAOsvu3nUKYHFV228YtIFWmCSA=",
+  "azp": "d7ad46be-1aaf-45d4-9a60-419625acdf09",
+  "azpacr": "2",
+  "idtyp": "app",
+  "oid": "86aae5ce-4421-4374-939b-cedb3cb1ae60",
+  "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtJz5YPs0epBBgUkwL3dGmTYAAABCAA.",
+  "sub": "/eid1/c/pub/t/QogjmTtq60-IZp7FvIeLtA/a/vkat168a1EWaYEGWJazfCQ/2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
+  "tid": "99238842-6a3b-4feb-8866-9ec5bc878bb4",
+  "uti": "w0vv8ymEWUGOPbK4s_ocAA",
+  "ver": "2.0",
+  "xms_act_fct": "3 9",
+  "xms_ficinfo": "CAAQABgAIAAoAjAAOAU",
+  "xms_ftd": "oUrNJ3zQuHW2qdF36quR_4KDcYC5h9qyYQ7x-K5BhnoBYXVzdHJhbGlhZWFzdC1kc21z",
+  "xms_idrel": "7 2",
+  "xms_sub_fct": "3 9"
+}
+2026-06-22 10:42:46,053 INFO ------------------------------
+2026-06-22 10:42:46,213 INFO Exchanged for the Agent ID's (2fd494f6-ac21-46eb-a888-f9d5b251c0f8) Access Token:
+2026-06-22 10:42:46,213 INFO {
+  "aud": "https://graph.microsoft.com",
+  "iss": "https://sts.windows.net/99238842-6a3b-4feb-8866-9ec5bc878bb4/",
+  "iat": 1782088663,
+  "nbf": 1782088663,
+  "exp": 1782092563,
+  "acrs": [
+    "pfdr"
+  ],
+  "aio": "k2FgYDjVovR91f/YrXPCNq/kq/1Z3BUat0nGhC2B8XvFxPXym6oB",
+  "app_displayname": "My Agent",
+  "appid": "2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
+  "appidacr": "2",
+  "idp": "https://sts.windows.net/99238842-6a3b-4feb-8866-9ec5bc878bb4/",
+  "idtyp": "app",
+  "oid": "2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
+  "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtAMAAAAAAAAAwAAAAAAAAAAAAABCAA.",
+  "roles": [
+    "User.Read.All"
+  ],
+  "sub": "2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
+  "tenant_region_scope": "OC",
+  "tid": "99238842-6a3b-4feb-8866-9ec5bc878bb4",
+  "uti": "REH4Fo7jqEix057PHVQZAA",
+  "ver": "1.0",
+  "wids": [
+    "0997a1d0-0d1d-4acb-b408-d5ca73121e90"
+  ],
+  "xms_act_fct": "3 9 11",
+  "xms_ftd": "fbAI-fV18s4aEh9byRyBfxyL72CwnFvmMMLgqnP-OD8BYXVzdHJhbGlhc291dGhlYXN0LWRzbXM",
+  "xms_idrel": "14 7",
+  "xms_par_app_azp": "d7ad46be-1aaf-45d4-9a60-419625acdf09",
+  "xms_pftexp": 1782178963,
+  "xms_rd": "0.42LlYBJidBIS4WAXEtjntvb6eqkrrrMSHKeprrnPKSTCwSkkcGtmW-jThiSv-dOsn_7siHouJMLBISTAzAABB6C0kAgHt5BA8uO5f2KWiRudWn5nLotwT4UUHweXEJehuYWRgYWFmZkxAA",
+  "xms_sess_fct": "6 21",
+  "xms_sub_fct": "3 9 11",
+  "xms_tcdt": 1767333340,
+  "xms_tnt_fct": "2 3"
+}
+2026-06-22 10:42:46,213 INFO ------------------------------
+2026-06-22 10:42:46,342 INFO Tenant Users (retrieved from MS Graph with our Agent ID token):
+2026-06-22 10:42:46,342 INFO Display Name       User Principal Name                                                            ID                                  
+-----------------  -----------------------------------------------------------------------------  ------------------------------------
+Conf Room Adams    Adams@M365x41156588.OnMicrosoft.com                                            46aabaad-cc57-4ba2-b166-cb0cbb198fe5
+Adele Vance        AdeleV@M365x41156588.OnMicrosoft.com                                           2700fd00-3330-4e70-b4c9-3a443a4713f5
+MOD Administrator  admin_D365DemoTSCE06654849.onmicrosoft.com#EXT#@M365x41156588.onmicrosoft.com  1d66f1a4-f269-40ac-b20e-451e8395397d
+MOD Administrator  admin@M365x41156588.onmicrosoft.com                                            3880aa2b-be91-448c-a88c-5ee9f2c99bdf
+Alex Wilber        AlexW@M365x41156588.OnMicrosoft.com                                            351824cf-e922-4d10-b1c7-d8d45fec192e
+2026-06-22 10:42:46,342 INFO ------------------------------
+2026-06-22 10:42:46,501 INFO New Agent ID token scoped to AzureADTokenExchange (needed for exchange) instead of MS Graph
+2026-06-22 10:42:46,502 INFO {
+  "aud": "fb60f99c-7a34-4190-8149-302f77469936",
+  "iss": "https://login.microsoftonline.com/99238842-6a3b-4feb-8866-9ec5bc878bb4/v2.0",
+  "iat": 1782088663,
+  "nbf": 1782088663,
+  "exp": 1782092563,
+  "aio": "ASQA2/8cAAAAi1Gj3cizWKjmIKGWLJxY3ByFQGtITKpqm+6ecJaxDfA=",
+  "azp": "2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
+  "azpacr": "2",
+  "idtyp": "app",
+  "oid": "2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
+  "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtJz5YPs0epBBgUkwL3dGmTYAAABCAA.",
+  "sub": "2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
+  "tid": "99238842-6a3b-4feb-8866-9ec5bc878bb4",
+  "uti": "2Lvgrpy33kqn7NpmaiEJAA",
+  "ver": "2.0",
+  "xms_act_fct": "3 11 9",
+  "xms_ficinfo": "CAAQABgAIAAoAzAAOAE",
+  "xms_ftd": "DXmoB6qib_nE-ibNu6J6M5PfvQWIdb-Mg_oumf9cbvcBYXVzdHJhbGlhZWFzdC1kc21z",
+  "xms_idrel": "7 14",
+  "xms_par_app_azp": "d7ad46be-1aaf-45d4-9a60-419625acdf09",
+  "xms_sess_fct": "21 20",
+  "xms_sub_fct": "3 9 11"
+}
+2026-06-22 10:42:46,503 INFO ------------------------------
+2026-06-22 10:42:46,688 INFO Exchanging that new Agent ID (2fd494f6-ac21-46eb-a888-f9d5b251c0f8) token for the Agent User's (MyAgentUser@M365x41156588.onmicrosoft.com) Access Token
+2026-06-22 10:42:46,689 INFO {
+  "aud": "https://graph.microsoft.com",
+  "iss": "https://sts.windows.net/99238842-6a3b-4feb-8866-9ec5bc878bb4/",
+  "iat": 1782088664,
+  "nbf": 1782088664,
+  "exp": 1782094286,
+  "acct": 0,
+  "acr": "0",
+  "acrs": [
+    "p1",
+    "urn:user:registersecurityinfo",
+    "pfdr"
+  ],
+  "aio": "AbQAS/8cAAAAfynqnKXgpPqKiU7hgd58A0doFc2PJEjJqhMKuMk/nZoj3ALTOMrIcVg1YWj8eCItO6AyJmdCGL6ZX908oUT7/6slc4i65LmmfSvNm/YjNn+8pLYx/KptLKmJoWm6FyRhxXCDNJkavpNOPeBw65S+Pj1MMR8IGVwnGnJN2ouWn6uVyFocq1RH11hAnmGDQQuxOK1hKEKnriIg/fNloHarvuWgP0EsbYnbWc2dauCC6zo=",
+  "app_displayname": "My Agent",
+  "appid": "2fd494f6-ac21-46eb-a888-f9d5b251c0f8",
+  "appidacr": "2",
+  "idtyp": "user",
+  "ipaddr": "13.72.241.239",
+  "name": "My Agent User",
+  "oid": "54c88506-ad44-462f-bfb7-b68f4a6b6c8b",
+  "platf": "14",
+  "puid": "10032005DCFEDB2F",
+  "rh": "1.AUIAQogjmTtq60-IZp7FvIeLtAMAAAAAAAAAwAAAAAAAAAAAAHBCAA.",
+  "scp": "openid profile User.Read.All email",
+  "sid": "005ef0ca-9c0e-ab27-f106-9b44a486c79f",
+  "sub": "R2F95TNMCgZ-kLIRa5Cwzmhjyu6jCm-IGgPHIa2cGz8",
+  "tenant_region_scope": "OC",
+  "tid": "99238842-6a3b-4feb-8866-9ec5bc878bb4",
+  "unique_name": "MyAgentUser@M365x41156588.onmicrosoft.com",
+  "upn": "MyAgentUser@M365x41156588.onmicrosoft.com",
+  "uti": "bP106d-SkkWTVnEMvMkUAA",
+  "ver": "1.0",
+  "wids": [
+    "b79fbf4d-3ef9-4689-8143-76b194e85509"
+  ],
+  "xms_act_fct": "3 9 11",
+  "xms_ftd": "oyio38eEAdivcB55E3yZJST3DDN_ALL7P-1VLBl67HIBYXVzdHJhbGlhc291dGhlYXN0LWRzbXM",
+  "xms_idrel": "14 1",
+  "xms_par_app_azp": "d7ad46be-1aaf-45d4-9a60-419625acdf09",
+  "xms_pftexp": 1782180686,
+  "xms_sess_fct": "10 21",
+  "xms_st": {
+    "sub": "3P__oVHljAy06kuJlpZRO9fXesIgTh0x6-QS5RDVeqU"
+  },
+  "xms_sub_fct": "3 13",
+  "xms_tcdt": 1767333340,
+  "xms_tnt_fct": "3 4"
+}
+2026-06-22 10:42:46,689 INFO ------------------------------
+2026-06-22 10:42:46,852 INFO Tenant Users (retrieved from MS Graph with our Agent User's token):
+2026-06-22 10:42:46,853 INFO Display Name       User Principal Name                                                            ID                                  
+-----------------  -----------------------------------------------------------------------------  ------------------------------------
+Conf Room Adams    Adams@M365x41156588.OnMicrosoft.com                                            46aabaad-cc57-4ba2-b166-cb0cbb198fe5
+Adele Vance        AdeleV@M365x41156588.OnMicrosoft.com                                           2700fd00-3330-4e70-b4c9-3a443a4713f5
+MOD Administrator  admin_D365DemoTSCE06654849.onmicrosoft.com#EXT#@M365x41156588.onmicrosoft.com  1d66f1a4-f269-40ac-b20e-451e8395397d
+MOD Administrator  admin@M365x41156588.onmicrosoft.com                                            3880aa2b-be91-448c-a88c-5ee9f2c99bdf
+Alex Wilber        AlexW@M365x41156588.OnMicrosoft.com                                            351824cf-e922-4d10-b1c7-d8d45fec192e
+2026-06-22 10:42:46,853 INFO ------------------------------
+2026-06-22 10:42:46,853 INFO Entra ID Agent ID walkthrough completed successfully.
+{"timestamp": "2026-06-22T00:42:46.854Z", "level": "INFO", "message": "Invocation completed successfully (1.697s)", "logger": "bedrock_agentcore.app", "requestId": "c2f665f2-0774-49b9-b413-5f2629fce465"}
+2026-06-22 10:42:46,854 INFO Invocation completed successfully (1.697s)

@@ -4,7 +4,7 @@ This is the demo for the blog post https://medium.com/@jason-umiker/deep-dive-in
 
 ## Prerequisites
 
-TODO: I know I need to do more work here in documenting the prerequistes for these scripts such as Powershell, the cloud CLIs they call, as well as how to spin up VMs in each cloud to call them with the right managed identities assigned etc.
+TODO I know I need to do more work here in documenting the prerequistes for these scripts such as Powershell, the cloud CLIs they call, as well as how to spin up VMs in each cloud to call them with the right managed identities assigned etc.
 
 ## Setting up Entra ID Agent ID for the Demos
 
@@ -43,7 +43,7 @@ Everything from sign-in-demo-secret.ps1 (if you haven't done it already) plus:
 
 ### Setting up for the AWS Bedrock Agentcore Demo
 
-[TODO] Add instructions here
+TODO Add instructions here
 
 ## Running the demos
 
@@ -53,8 +53,8 @@ After you've filled in the required variables at the top of the scripts you can:
 1. You can run sign-in-demo-aws-iam.ps1 from a EC2 Instance or Lambda function etc. in AWS
 1. You can run sign-in-demo-gcp-iam.ps1 from a VM etc. in GCP
 1. You can run the AWS Bedrock Agentcore demo either locally (with the IAM Role of your local CLI Federated) or after deploying it to AWS (Federating the Role)
-    1. [TODO] Local Instructions
-    1. [TODO] In AWS Instructions
+    1. TODO Local Instructions
+    1. TODO In AWS Instructions
 
 ## Sample outputs
 
